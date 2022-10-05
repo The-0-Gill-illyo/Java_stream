@@ -75,7 +75,7 @@ public class StreamLabService {
         // Research 'java create specific date' and 'java compare dates'
         // You may need to use the helper classes imported above!
     	
-        return users.findAll().stream().filter((Date.from(Date.from(2016).before())).compareTo();
+        return users.findAll().stream().filter((Date.from(Date.from(2016).compare();
     }
 
     public List<User> RProblemFive()
@@ -83,7 +83,7 @@ public class StreamLabService {
         // Write a query that gets all of the users who registered AFTER 2016 and BEFORE 2018
         // Return the list
 
-        return null;
+        return users.findAll().stream().filter(Date.from(2016).before(2018)).toList();
     }
 
     // <><><><><><><><> R Actions (Read) with Foreign Keys <><><><><><><><><>
