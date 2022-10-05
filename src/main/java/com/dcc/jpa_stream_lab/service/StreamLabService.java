@@ -112,9 +112,11 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "oda@gmail.com" and returns the sum of all of the products prices.
     	// Remember to break the problem down and take it one step at a time!
+        String email = email.findAll().stream().filter(e -> e.getEmail("email")).findFirst().orElse(null);
+        List<User> long products = users.findAll().stream().filter(u -> u.getEmail("oda@gmail.com")).toList()
 
 
-    	return 0;
+    	return products;
 
     }
 
@@ -122,8 +124,10 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of users who have the role of "Employee".
     	// Return the list
+        Role employeeRole = roles.findAll().stream().filter(r -> r.getName("Emplyee")).findFirst().orElse(null);
+        List<Product> employee = users.findAll().stream().filter(u -> u.getRoles(employeeRole)).toList();
 
-    	return null;
+    	return employee;
     }
 
     // <><><><><><><><> CUD (Create, Update, Delete) Actions <><><><><><><><><>
