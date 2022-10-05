@@ -192,7 +192,9 @@ public class StreamLabService {
     {
         // Update the price of the product you created to a different value.
         // Return the updated product
-    	return null;
+        Product product = products.findAll().stream().filter(p -> p.getPrice("20")).findFirst().orElse(null);
+        product.getPrice("20");
+    	return product;
     }
 
     public User UProblemTwo()
