@@ -1,5 +1,6 @@
 package com.dcc.jpa_stream_lab.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import com.dcc.jpa_stream_lab.models.Product;
 import com.dcc.jpa_stream_lab.models.Role;
 import com.dcc.jpa_stream_lab.models.ShoppingcartItem;
 import com.dcc.jpa_stream_lab.models.User;
+
+import javax.swing.text.DateFormatter;
 
 @Transactional
 @Service
@@ -72,7 +75,7 @@ public class StreamLabService {
         // Research 'java create specific date' and 'java compare dates'
         // You may need to use the helper classes imported above!
     	
-        return null;
+        return users.findAll().stream().filter((Date.from(Date.from(2016).before())).compareTo();
     }
 
     public List<User> RProblemFive()
