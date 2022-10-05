@@ -76,7 +76,7 @@ public class StreamLabService {
         // Research 'java create specific date' and 'java compare dates'
         // You may need to use the helper classes imported above!
     	
-        return users.findAll().stream().filter(Date.from(Before 2016)).toList();
+        return users.findAll().stream().filter(Date.from(2016)).toList();
     }
 
     public List<User> RProblemFive()
@@ -148,9 +148,11 @@ public class StreamLabService {
     {
         // Create a new Product object and add that product to the Products table.
         // Return the product
-    	
+    	Product newProduct = new Product();
+        newProduct.setName("Mango");
+        products.save(newProduct);
 
-    	return null;
+    	return newProduct;
 
     }
 
@@ -163,13 +165,16 @@ public class StreamLabService {
     	return david.getRoles();
     }
 
-    public ShoppingcartItem CProblemTwo()
+    public List<ShoppingcartItem>  CProblemTwo()
     {
     	// Create a new ShoppingCartItem to represent the new product you created being added to the new User you created's shopping cart.
         // Add the product you created to the user we created in the ShoppingCart junction table.
         // Return the ShoppingcartItem
+        ShoppingcartItem newShoppingcartItem = new ShoppingcartItem();
+        newShoppingcartItem = "Ice Cream";
+        users.addItem(newShoppingcartItem);
 
-    	return null;
+    	return users.getItems();
     	
     }
 
