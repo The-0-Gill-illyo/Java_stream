@@ -62,7 +62,7 @@ public class StreamLabService {
     {
         // Write a query that gets each product that CONTAINS an "s" in the products name.
         // Return the list
-    	return null;
+    	return products.findAll().stream().filter(s -> s.getShoppingcartItems().contains(s)).toList();
     }
 
     public List<User> RProblemFour()
