@@ -3,6 +3,7 @@ package com.dcc.jpa_stream_lab.service;
 import java.util.Date;
 import java.util.List;
 
+import org.aspectj.lang.annotation.Before;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -75,7 +76,7 @@ public class StreamLabService {
         // Research 'java create specific date' and 'java compare dates'
         // You may need to use the helper classes imported above!
     	
-        return users.findAll().stream().filter((Date.from(Date.from(2016).compare();
+        return users.findAll().stream().filter(Date.from(Before 2016)).toList();
     }
 
     public List<User> RProblemFive()
@@ -101,8 +102,10 @@ public class StreamLabService {
     {
         // Write a query that retrieves all of the products in the shopping cart of the user who has the email "afton@gmail.com".
         // Return the list
+        String email = email.findAll().stream().filter(e -> e.getEmail("email")).findFirst().orElse(null);
+        List<Product> customers = users.findAll().stream().filter(u -> u.getEmail("afton@gmail.com")).toList();
 
-    	return null;
+    	return customers;
     }
 
     public long RProblemSeven()
